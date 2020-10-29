@@ -7,14 +7,17 @@ import com.bombadu.barbuddy.local.LocalDrinkData
 import com.bombadu.barbuddy.network.DrinkApi
 import com.bombadu.barbuddy.network.DrinkData
 
-class DrinkRepository(private val drinkDao: DrinkDao) {
+
+class DrinkRepository (private val drinkDao: DrinkDao) {
 
     val getAllDrinks: LiveData<List<LocalDrinkData>> = drinkDao.getAllDrinks()
-    //val allDrinkNames: LiveData<List<DrinkNameData>> = drinkDao.getDrinkNameData()
+
 
     fun getDataFromNetwork(drinkName: String) {
         GetDataFromNetWorkTask(drinkName, drinkDao).execute()
     }
+
+
 
     fun insertData(localDrinkData: LocalDrinkData) {
         InsertDataAsyncTask(

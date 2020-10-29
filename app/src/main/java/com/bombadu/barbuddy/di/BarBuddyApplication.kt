@@ -4,5 +4,4 @@ import android.app.Application
 
 
 
-class BarBuddyApplication : Application() {
-}
+class BarBuddyApplication : Application()

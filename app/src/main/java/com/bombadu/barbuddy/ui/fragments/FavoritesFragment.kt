@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import com.bombadu.barbuddy.R
 
 
+
 class FavoritesFragment : Fragment() {
 
     override fun onCreateView(

@@ -19,12 +19,19 @@ interface DrinkDao {
     @Query("DELETE FROM data_table")
     fun deleteAllDrinks()
 
-    /*@Query("SELECT * FROM data_table WHERE drink_name = :drink_name")
-    fun getDrinkByDrinkName(drink_name: String?) : LiveData<List<DrinkData>>*/
+   /* @Query("SELECT DISTINCT FROM data_table ORDER BY drink_name ASC")
+    fun getDrinkNameData(): LiveData<List<DrinkNameData>>*/
 
     @Query("SELECT * FROM data_table ORDER BY drink_name ASC")
     fun getAllDrinks(): LiveData<List<LocalDrinkData>>
 
-    /*@Query("SELECT DISTINCT drink_name FROM data_table ORDER BY drink_name ASC")
-    fun getDrinkNameData() : LiveData<List<DrinkNameData>>*/
+    @Query("SELECT * FROM data_table WHERE drink_name = :drink_id")
+    fun getDrinkByDrinkId(drink_id: String?) : LiveData<List<LocalDrinkData>>
 }
+
+
+
+
+
+
+

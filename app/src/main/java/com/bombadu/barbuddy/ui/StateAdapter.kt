@@ -11,6 +11,8 @@ import com.bombadu.barbuddy.ui.fragments.MainFragment
 class StateAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
     FragmentStateAdapter(fragmentManager, lifecycle) {
 
+
+
     private val fragments: ArrayList<Fragment> = arrayListOf(
         MainFragment(),
         FavoritesFragment()
