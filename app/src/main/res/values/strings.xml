@@ -6,4 +6,8 @@
     <string name="drink_image">Drink Image</string>
     <string name="search">Search</string>
     <string name="textview">TextView</string>
+    <string name="favorite_button">Favorite Button</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="directions">Directions</string>
+    <string name="drink_image">Drink Image</string>
 </resources>

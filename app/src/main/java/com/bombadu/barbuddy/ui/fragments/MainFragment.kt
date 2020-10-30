@@ -17,12 +17,8 @@ import kotlinx.android.synthetic.main.fragment_main.*
 
 class MainFragment : Fragment(R.layout.fragment_main) {
 
-
-
     private lateinit var drinkViewModel: DrinkViewModel
     private lateinit var adapter: MainAdapter
-
-
 
 
 
@@ -41,6 +37,8 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         adapter = MainAdapter(view.context)
         getTheData()
         setHasOptionsMenu(true)
+
+
 
     }
 
