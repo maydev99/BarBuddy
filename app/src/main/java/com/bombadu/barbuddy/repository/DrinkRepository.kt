@@ -5,25 +5,26 @@ import androidx.lifecycle.LiveData
 import com.bombadu.barbuddy.local.DrinkDao
 import com.bombadu.barbuddy.local.LocalDrinkData
 import com.bombadu.barbuddy.network.DrinkApi
-import com.bombadu.barbuddy.network.DrinkData
 
 
 class DrinkRepository (private val drinkDao: DrinkDao) {
 
     val getAllDrinks: LiveData<List<LocalDrinkData>> = drinkDao.getAllDrinks()
+    val getFavoriteDrinks: LiveData<List<LocalDrinkData>> = drinkDao.getFavoriteDrinks()
 
 
     fun getDataFromNetwork(drinkName: String) {
         GetDataFromNetWorkTask(drinkName, drinkDao).execute()
     }
 
-
-
     fun insertData(localDrinkData: LocalDrinkData) {
         InsertDataAsyncTask(
             drinkDao
         ).execute(localDrinkData)
     }
+
+
+
 
 
     private class GetDataFromNetWorkTask(val drinkName: String, val drinkDao: DrinkDao) : AsyncTask<Unit, Unit, Unit>() {

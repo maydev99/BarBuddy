@@ -14,11 +14,20 @@ class DrinkViewModel(application: Application) : AndroidViewModel(application) {
 
     private var repository: DrinkRepository
     private val allDrinks: LiveData<List<LocalDrinkData>>
+    private val allFavoriteDrinks: LiveData<List<LocalDrinkData>>
+
 
     init {
         val drinkDao = DrinkDatabase.getDatabase(application, viewModelScope).drinkDao()
         repository = DrinkRepository(drinkDao)
         allDrinks = repository.getAllDrinks
+        allFavoriteDrinks = repository.getFavoriteDrinks
+
+    }
+
+
+    fun insertDrinkData(drinkData: LocalDrinkData) {
+        repository.insertData(drinkData)
     }
 
 
@@ -29,6 +38,10 @@ class DrinkViewModel(application: Application) : AndroidViewModel(application) {
     fun getAllMyDrinks(): LiveData<List<LocalDrinkData>> {
         Log.d("DATAVM", allDrinks.toString())
         return allDrinks
+    }
+
+    fun getFavoriteDrinks(): LiveData<List<LocalDrinkData>> {
+        return allFavoriteDrinks
     }
 
 }

@@ -7,6 +7,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+@Suppress("TYPE_INFERENCE_ONLY_INPUT_TYPES_WARNING")
 class DrinkApi(drinkDao: DrinkDao) {
 
     private var repository: DrinkRepository = DrinkRepository(drinkDao)

@@ -1,4 +1,3 @@
-
 package com.bombadu.barbuddy.ui
 
 import android.content.Context
@@ -16,7 +15,8 @@ import com.bombadu.barbuddy.R
 import com.bombadu.barbuddy.local.LocalDrinkData
 import com.squareup.picasso.Picasso
 
-class MainAdapter(context: Context) : ListAdapter<LocalDrinkData, MainAdapter.DrinkViewHolder>(ITEM_COMPARATOR) {
+class MainAdapter(context: Context) :
+    ListAdapter<LocalDrinkData, MainAdapter.DrinkViewHolder>(ITEM_COMPARATOR) {
 
     private val mContext = context
 
@@ -39,6 +39,7 @@ class MainAdapter(context: Context) : ListAdapter<LocalDrinkData, MainAdapter.Dr
             bundle.putString("drink_instructions", data.drink_instructions)
             bundle.putBoolean("drink_favorite", data.drink_favorite)
             bundle.putString("drink_id", data.drink_id)
+            bundle.putInt("item_id", data.id)
             intent.putExtras(bundle)
             mContext.startActivity(intent)
         }

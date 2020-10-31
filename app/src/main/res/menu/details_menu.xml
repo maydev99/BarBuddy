@@ -4,9 +4,18 @@
 
     <item
         android:id="@+id/action_share"
-        android:title="Share"
+        android:title="@string/share"
         android:icon="@drawable/ic_baseline_share_24"
         android:orderInCategory="20"
+        app:showAsAction="ifRoom">
+
+    </item>
+
+    <item
+        android:id="@+id/action_favorite"
+        android:title="@string/favorite"
+        android:icon="@drawable/ic_baseline_favorite_border_24"
+        android:orderInCategory="10"
         app:showAsAction="ifRoom">
 
     </item>

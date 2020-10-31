@@ -9,5 +9,7 @@
     <string name="favorite_button">Favorite Button</string>
     <string name="ingredients">Ingredients</string>
     <string name="directions">Directions</string>
-    <string name="drink_image">Drink Image</string>
+    <string name="favorite">Favorite</string>
+    <string name="share">Share</string>
+
 </resources>
